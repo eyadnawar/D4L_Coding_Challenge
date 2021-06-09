@@ -3,14 +3,15 @@ import psycopg2.extras
 import time
 
 def token_reader_sorted_tokens():
+    file_path = 'C:/Users/Lenovo/Desktop/D4L.txt'
     conn = psycopg2.connect(dbname= 'postgres', user= 'postgres', password= 'select33')
     cur = conn.cursor()
-    cur.execute("CREATE TABLE tokens (token VARCHAR);")
+    cur.execute("CREATE TABLE sorted_tokens (token VARCHAR);")
     conn.commit()
 
     start_time = time.time()
 
-    file = open('C:/Users/Lenovo/Desktop/D4L.txt', 'r')
+    file = open(file_path, 'r')
     lister = file.readlines()
     lister.sort()
     file.close()
@@ -30,7 +31,7 @@ def token_reader_sorted_tokens():
 
     lister.clear()
     data = [(word,) for word in final_list]
-    insert_query = 'insert into tokens (token) values %s'
+    insert_query = 'insert into sorted_tokens (token) values %s'
     psycopg2.extras.execute_values (cur, insert_query, data)
     conn.commit()
 
