@@ -3,6 +3,7 @@ import psycopg2.extras
 import time
 
 def token_reader_hashset():
+    file_path = 'C:/Users/Lenovo/Desktop/D4L.txt'
     conn = psycopg2.connect(dbname= 'postgres', user= 'postgres', password= 'select33')
     cur = conn.cursor()
     cur.execute("CREATE TABLE tokens (token VARCHAR);")
@@ -10,7 +11,7 @@ def token_reader_hashset():
 
     start_time = time.time()
 
-    file = open('C:/Users/Lenovo/Desktop/D4L.txt', 'r')
+    file = open(file_path, 'r')
     my_dict = dict()
     my_set = set()
 
