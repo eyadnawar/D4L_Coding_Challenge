@@ -1,3 +1,4 @@
+from token_generator import generate_tokens
 from token_reader_HashSet import token_reader_hashset
 from token_reader_sorting import token_reader_sorted_tokens
 
