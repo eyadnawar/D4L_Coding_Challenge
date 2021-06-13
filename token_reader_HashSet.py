@@ -2,16 +2,20 @@ import psycopg2
 import psycopg2.extras
 import time
 
-def token_reader_hashset():
-    file_path = 'C:/Users/Lenovo/Desktop/D4L.txt'
+def token_reader_hashset(file_path):
     conn = psycopg2.connect(dbname= 'postgres', user= 'postgres', password= 'select33')
     cur = conn.cursor()
     cur.execute("CREATE TABLE tokens (token VARCHAR);")
     conn.commit()
 
     start_time = time.time()
-
-    file = open(file_path, 'r')
+    
+    try:
+        file = open(file_path, 'r')
+    
+    except:
+        print("error, could not open file.")
+        
     my_dict = dict()
     my_set = set()
 
