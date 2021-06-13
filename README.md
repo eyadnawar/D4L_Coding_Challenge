@@ -17,9 +17,9 @@ In this approach, I use a Hash Set, since a ***HashSet*** has a constant access 
 ***O(1)***, and only stores each element once, so it would automatically get rid of duplicates. Along with that, I use a dictionary to store all duplicate tokens,
 an their corresponding frequencies.
 
-**Space Complexity:** Linear Space ----> O(n) where n is the number of tokens.
+**Space Complexity:** Linear Space ----> ***O(n)*** where n is the number of tokens.
 
-**Time Complexity:** Linear Time   ----> O(n) where we have to traverse every token and add it to the HashSet. Worst case sceneario is that we have a lt of chaining for each HashSet entry and we need to traverse each linked list while populating
+**Time Complexity:** Linear Time   ----> ***O(n)*** where we have to traverse every token and add it to the HashSet. Worst case sceneario is that we have a lt of chaining for each HashSet entry and we need to traverse each linked list while populating
 the database.
 
 **Network I/O:** We populate the database with the 10,000,000 tokens all at once, that permits the database to only focus on data processing, rather that spending more time on connection management, transaction overhead, and SQL parsing.
