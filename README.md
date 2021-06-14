@@ -1,6 +1,6 @@
 # General Description:
 
-This projects generates 10 million tokens in a file then reads those tokens and populates a Postgres RDBMS with those tokens ignring duplicates. This projects implements a few data structures to handle these operaions as efficiently as possible
+This projects generates 10 million tokens in a file then reads those tokens and populates a Postgres RDB with those tokens ignring duplicates. This projects implements a few data structures to handle these operaions as efficiently as possible
 
 Programing Language: ***Python***
 
